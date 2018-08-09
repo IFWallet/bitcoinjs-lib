@@ -804,7 +804,6 @@ TransactionBuilder.prototype.__canModifyOutputs = function () {
         // of more outputs
         return nInputs <= nOutputs
       }
-      return true
     })
   })
 }
