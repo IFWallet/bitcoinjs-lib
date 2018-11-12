@@ -653,6 +653,17 @@ TransactionBuilder.prototype.addOutput = function (scriptPubKey, value) {
   return this.tx.addOutput(scriptPubKey, value)
 }
 
+// specially for pow battle
+TransactionBuilder.prototype.addVaccineOutput = function (pubkey, value) {
+  if (!this.__canModifyOutputs()) {
+    throw new Error('No, this would invalidate signatures')
+  }
+
+  let scriptPubKey = btemplates.vaccine.output.encode(pubkey)
+
+  return this.tx.addOutput(scriptPubKey, value)
+}
+
 TransactionBuilder.prototype.build = function () {
   return this.__build(false)
 }

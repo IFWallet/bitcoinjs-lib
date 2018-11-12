@@ -7,6 +7,7 @@ var scriptHash = require('./scripthash')
 var witnessPubKeyHash = require('./witnesspubkeyhash')
 var witnessScriptHash = require('./witnessscripthash')
 var witnessCommitment = require('./witnesscommitment')
+var vaccine = require('./vaccine')
 
 var types = {
   MULTISIG: 'multisig',
@@ -70,5 +71,6 @@ module.exports = {
   witnessPubKeyHash: witnessPubKeyHash,
   witnessScriptHash: witnessScriptHash,
   witnessCommitment: witnessCommitment,
-  types: types
+  types: types,
+  vaccine: vaccine
 }
