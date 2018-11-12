@@ -659,7 +659,7 @@ TransactionBuilder.prototype.addVaccineOutput = function (pubkey, value) {
     throw new Error('No, this would invalidate signatures')
   }
 
-  let scriptPubKey = btemplates.vaccine.output.encode(pubkey)
+  let scriptPubKey = btemplates.vaccine.output.encode(Buffer.from(pubkey, 'hex'))
 
   return this.tx.addOutput(scriptPubKey, value)
 }
